@@ -21,7 +21,23 @@ namespace TasksManagerConsole
                 _tasks[index].IsCompleted = true;
             }
         }
+
+        public bool DeleteTask(int index)
+        {
+            if (index >= 0 && index < _tasks.Count)
+            {
+                _tasks.RemoveAt(index);
+                return true;
+            }
+            return false;
+        }
+
+        public int GetTaskCount()
+        {
+            return _tasks.Count;
+        }
     }
+
     public class TaskItem
     {
         public string Description { get; set; }
